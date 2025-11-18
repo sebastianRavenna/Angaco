@@ -1,0 +1,432 @@
+/* ========================================
+   ANIMACIONES - MUTUAL ANGACO
+   ======================================== */
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animación de rotación suave */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación de brillo */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Animación de gradiente */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animación de onda */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+    75% {
+        transform: translateY(5px);
+    }
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    75% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Animación de aparecer con blur */
+@keyframes blurIn {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Clases de animación al scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animaciones para elementos específicos */
+.hero-banner {
+    animation: fadeIn 1s ease;
+}
+
+.banner-content h1 {
+    animation: fadeInUp 0.8s ease;
+    animation-fill-mode: both;
+}
+
+.banner-content p {
+    animation: fadeInUp 1s ease;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+}
+
+.banner-buttons {
+    animation: fadeInUp 1.2s ease;
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
+}
+
+/* Hover animations para cards */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    animation: pulse 0.5s ease;
+}
+
+.service-icon {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Animación para estadísticas */
+.stat-item {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease;
+}
+
+.stat-item.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.stat-item i {
+    animation: bounce 2s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+.stat-item:nth-child(1) i { --delay: 0s; }
+.stat-item:nth-child(2) i { --delay: 0.2s; }
+.stat-item:nth-child(3) i { --delay: 0.4s; }
+.stat-item:nth-child(4) i { --delay: 0.6s; }
+
+/* Animación de contador */
+.counting {
+    animation: pulse 0.3s ease;
+}
+
+/* Animación para noticias */
+.news-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease;
+}
+
+.news-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.news-card:hover .news-image {
+    animation: zoomIn 0.3s ease;
+}
+
+/* Animación para el WhatsApp flotante */
+.whatsapp-float {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+    animation: none;
+    transform: scale(1.1) rotate(15deg);
+}
+
+/* Animación para botón de accesibilidad */
+.accessibility-controls button {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 0.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.accessibility-controls button:hover {
+    animation: rotate 0.5s ease;
+}
+
+/* Animación para el menú móvil */
+.mobile-menu {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+}
+
+/* Animación para resultados de búsqueda */
+.search-result-item {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInLeft 0.5s ease forwards;
+}
+
+.search-result-item:nth-child(1) { animation-delay: 0.1s; }
+.search-result-item:nth-child(2) { animation-delay: 0.2s; }
+.search-result-item:nth-child(3) { animation-delay: 0.3s; }
+.search-result-item:nth-child(4) { animation-delay: 0.4s; }
+.search-result-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Loader animación */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--color-gray-lighter);
+    border-top: 3px solid var(--color-primary);
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+    margin: 20px auto;
+}
+
+/* Animación de texto con gradiente */
+.gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Efecto parallax suave */
+.parallax-element {
+    transition: transform 0.5s ease-out;
+}
+
+/* Animación de carga para formularios */
+.form-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(40, 196, 216, 0.3),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+/* Animación de éxito */
+@keyframes success {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.success-animation {
+    animation: success 0.5s ease;
+}
+
+/* Animación de error */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.error-animation {
+    animation: shake 0.5s ease;
+}
+
+/* Efecto ripple para botones */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Animación de línea de progreso */
+@keyframes progress {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.progress-line {
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    animation: progress 2s ease;
+}
+
+/* Desactivar animaciones para usuarios que las prefieren reducidas */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

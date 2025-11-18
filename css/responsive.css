@@ -1,0 +1,429 @@
+/* ========================================
+   RESPONSIVE DESIGN - MUTUAL ANGACO
+   ======================================== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    /* Navegación */
+    .nav-menu {
+        gap: var(--spacing-lg);
+    }
+    
+    .search-box input {
+        width: 120px;
+    }
+    
+    .search-box input:focus {
+        width: 150px;
+    }
+    
+    /* Hero Banner */
+    .hero-banner {
+        height: 60vh;
+    }
+    
+    .banner-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .banner-content p {
+        font-size: 1.125rem;
+    }
+    
+    /* Grid de servicios */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Estadísticas */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Landscape y Tablets pequeñas (768px) */
+@media (max-width: 768px) {
+    /* Header */
+    .header-top {
+        display: none;
+    }
+    
+    .navbar {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .search-box {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Hero Banner */
+    .hero-banner {
+        height: 50vh;
+        min-height: 400px;
+        margin-top: 60px;
+    }
+    
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+    
+    .banner-content p {
+        font-size: 1rem;
+    }
+    
+    .banner-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Títulos de sección */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Servicios */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    /* Estadísticas */
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-item p {
+        font-size: 1rem;
+    }
+    
+    /* Noticias */
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* CTA */
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+    
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-contact li {
+        justify-content: center;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Mobile Portrait (480px) */
+@media (max-width: 480px) {
+    /* Tipografía general */
+    body {
+        font-size: 0.875rem;
+    }
+    
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.125rem; }
+    h5 { font-size: 1rem; }
+    h6 { font-size: 0.875rem; }
+    
+    /* Contenedor */
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    /* Logo */
+    .logo {
+        height: 50px;
+    }
+    
+    /* Hero Banner */
+    .hero-banner {
+        height: 70vh;
+        min-height: 350px;
+    }
+    
+    .banner-content {
+        padding: var(--spacing-md);
+    }
+    
+    .banner-content h1 {
+        font-size: 1.75rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .banner-content p {
+        font-size: 0.875rem;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    /* Botones */
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: 0.75rem;
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    /* Secciones */
+    .featured-services,
+    .news-section,
+    .stats-section,
+    .cta-section {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    /* Cards de servicio */
+    .service-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .service-icon i {
+        font-size: 1.5rem;
+    }
+    
+    /* Estadísticas */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .stat-item i {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-item p {
+        font-size: 0.875rem;
+    }
+    
+    /* Noticias */
+    .news-card {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .news-image {
+        height: 150px;
+    }
+    
+    .news-content {
+        padding: var(--spacing-md);
+    }
+    
+    /* Footer */
+    .footer-top {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .footer-column {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    /* WhatsApp y Accesibilidad */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    .whatsapp-float i {
+        font-size: 1.5rem;
+    }
+    
+    .accessibility-controls {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .accessibility-controls button {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .accessibility-controls button i {
+        font-size: 1.125rem;
+    }
+}
+
+/* Mobile muy pequeño (320px) */
+@media (max-width: 320px) {
+    /* Hero Banner */
+    .banner-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    /* Botones */
+    .btn {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 0.7rem;
+    }
+    
+    /* Servicios */
+    .service-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    .service-card p {
+        font-size: 0.8125rem;
+    }
+    
+    /* Footer */
+    .footer-contact {
+        font-size: 0.8125rem;
+    }
+}
+
+/* Dispositivos grandes (1200px+) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    /* Hero Banner en pantallas grandes */
+    .hero-banner {
+        height: 80vh;
+    }
+    
+    .banner-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .banner-content p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Ultra Wide (1920px+) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    /* Ajustes para pantallas muy grandes */
+    body {
+        font-size: 1.125rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .news-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Orientación Landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-banner {
+        height: 100vh;
+    }
+    
+    .banner-content h1 {
+        font-size: 1.75rem;
+    }
+    
+    .banner-content p {
+        display: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Ocultar elementos innecesarios */
+    .main-header,
+    .footer,
+    .whatsapp-float,
+    .accessibility-controls,
+    .hamburger,
+    .search-box,
+    .banner-buttons,
+    .service-link,
+    .news-link {
+        display: none !important;
+    }
+    
+    /* Ajustar colores para impresión */
+    * {
+        color: #000 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+    
+    /* Mantener imágenes */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+    
+    /* Evitar cortes de página en elementos importantes */
+    .service-card,
+    .news-card {
+        page-break-inside: avoid;
+    }
+    
+    /* Mostrar URLs de enlaces */
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+}

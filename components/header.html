@@ -1,0 +1,74 @@
+<!-- Header -->
+<header class="main-header">
+    <div class="header-top">
+        <div class="container">
+            <div class="header-info">
+                <span><i class="fas fa-phone"></i> (0264) 444-5555</span>
+                <span><i class="fas fa-envelope"></i> info@mutualangaco.com.ar</span>
+                <span><i class="fas fa-clock"></i> Lun a Vie: 8:00 - 14:00</span>
+            </div>
+            <div class="header-social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <img src="images/logo-angaco.png" alt="Mutual Angaco" id="logo-img">
+                </a>
+                
+                <!-- Menú de navegación -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">HOME</a></li>
+                    <li><a href="institucional.html" class="nav-link">INSTITUCIONAL</a></li>
+                    <li><a href="servicios.html" class="nav-link">SERVICIOS</a></li>
+                    <li><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+                </ul>
+                
+                <!-- Buscador -->
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar..." aria-label="Buscar">
+                    <button id="search-btn" aria-label="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- Menú móvil -->
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Menú móvil desplegable -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-search">
+            <input type="text" placeholder="Buscar..." aria-label="Buscar móvil">
+            <button aria-label="Buscar"><i class="fas fa-search"></i></button>
+        </div>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="institucional.html">INSTITUCIONAL</a></li>
+            <li><a href="servicios.html">SERVICIOS</a></li>
+            <li><a href="contacto.html">CONTACTO</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Resultados de búsqueda -->
+<div class="search-results" id="search-results">
+    <div class="container">
+        <button class="close-search" id="close-search">&times;</button>
+        <h3>Resultados de búsqueda</h3>
+        <div class="results-container" id="results-container"></div>
+    </div>
+</div>

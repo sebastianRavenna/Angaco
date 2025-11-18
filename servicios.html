@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Mutual Angaco</title>
+    <meta name="description" content="Conocé todos los servicios que ofrece Mutual Angaco: préstamos, subsidios, seguros y turismo">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/servicios.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-overlay"></div>
+            <div class="container">
+                <h1 data-aos="fade-up">Nuestros Servicios</h1>
+                <p data-aos="fade-up" data-aos-delay="100">Soluciones integrales para mejorar tu calidad de vida</p>
+                <nav class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <span>Servicios</span>
+                </nav>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="container">
+                <div class="services-intro" data-aos="fade-up">
+                    <h2>Servicios pensados para vos</h2>
+                    <p>En Mutual Angaco ofrecemos una amplia gama de servicios diseñados para acompañarte en cada momento de tu vida. Conocé todos los beneficios que tenemos para nuestros asociados.</p>
+                </div>
+                
+                <!-- Acordeón de Servicios -->
+                <div class="accordion" id="servicesAccordion">
+                    
+                    <!-- Servicio 1: Préstamos -->
+                    <div class="accordion-item" data-aos="fade-up">
+                        <h3 class="accordion-header" id="prestamos">
+                            <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne">
+                                <div class="accordion-icon">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                </div>
+                                <div class="accordion-title">
+                                    <span>Préstamos Personales</span>
+                                    <small>Financiación a tu medida</small>
+                                </div>
+                                <i class="fas fa-chevron-down accordion-arrow"></i>
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <div class="service-content">
+                                    <div class="service-description">
+                                        <h4>Préstamos adaptados a tus necesidades</h4>
+                                        <p>Ofrecemos diferentes líneas de crédito con las mejores condiciones del mercado. Nuestros préstamos están diseñados para ayudarte a cumplir tus objetivos personales y familiares.</p>
+                                        
+                                        <div class="service-features">
+                                            <h5>Características principales:</h5>
+                                            <ul>
+                                                <li><i class="fas fa-check"></i> Tasas competitivas y fijas</li>
+                                                <li><i class="fas fa-check"></i> Plazos flexibles de 6 a 48 meses</li>
+                                                <li><i class="fas fa-check"></i> Montos desde $50.000 hasta $2.000.000</li>
+                                                <li><i class="fas fa-check"></i> Aprobación en 48 horas hábiles</li>
+                                                <li><i class="fas fa-check"></i> Sin gastos de otorgamiento</li>
+                                                <li><i class="fas fa-check"></i> Renovación automática para buenos pagadores</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="service-types">
+                                            <h5>Tipos de préstamos disponibles:</h5>
+                                            <div class="types-grid">
+                                                <div class="type-card">
+                                                    <i class="fas fa-home"></i>
+                                                    <h6>Personal</h6>
+                                                    <p>Para lo que necesites</p>
+                                                </div>
+                                                <div class="type-card">
+                                                    <i class="fas fa-car"></i>
+                                                    <h6>Automotor</h6>
+                                                    <p>Comprá tu vehículo</p>
+                                                </div>
+                                                <div class="type-card">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                    <h6>Educativo</h6>
+                                                    <p>Invertí en tu futuro</p>
+                                                </div>
+                                                <div class="type-card">
+                                                    <i class="fas fa-heartbeat"></i>
+                                                    <h6>Salud</h6>
+                                                    <p>Para gastos médicos</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="service-requirements">
+                                            <h5>Documentación requerida:</h5>
+                                            <ul>
+                                                <li>DNI (original y copia)</li>
+                                                <li>Último recibo de sueldo</li>
+                                                <li>Servicio a tu nombre</li>
+                                                <li>CBU de cuenta bancaria</li>
+                                                <li>Certificación negativa de ANSES (para montos superiores a $500.000)</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="service-cta">
+                                            <a href="contacto.html" class="btn btn-primary">Solicitar Préstamo</a>
+                                            <a href="#" class="btn btn-secondary" onclick="showNotification('Calculadora en desarrollo', 'info'); return false;">
+                                                <i class="fas fa-calculator"></i> Calculadora de Cuotas
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Servicio 2: Subsidios -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="accordion-header" id="subsidios">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo">
+                                <div class="accordion-icon">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="accordion-title">
+                                    <span>Subsidios</span>
+                                    <small>Te acompañamos en momentos importantes</small>
+                                </div>
+                                <i class="fas fa-chevron-down accordion-arrow"></i>
+                            </button>
+                        </h3>
+                        <div id="collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="service-content">
+                                    <div class="service-description">
+                                        <h4>Apoyo económico cuando más lo necesitás</h4>
+                                        <p>Brindamos subsidios especiales para acompañarte en los momentos más significativos de tu vida, tanto en alegrías como en situaciones difíciles.</p>
+                                        
+                                        <div class="subsidies-grid">
+                                            <div class="subsidy-card">
+                                                <i class="fas fa-baby"></i>
+                                                <h5>Subsidio por Nacimiento</h5>
+                                                <p>Recibí un apoyo económico de <strong>$50.000</strong> por el nacimiento de tu hijo/a.</p>
+                                                <ul>
+                                                    <li>Presentar partida de nacimiento</li>
+                                                    <li>Antigüedad mínima: 6 meses</li>
+                                                    <li>Pago único dentro de los 30 días</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="subsidy-card">
+                                                <i class="fas fa-ring"></i>
+                                                <h5>Subsidio por Casamiento</h5>
+                                                <p>Te otorgamos <strong>$40.000</strong> para ayudarte con los gastos de tu boda.</p>
+                                                <ul>
+                                                    <li>Presentar acta de matrimonio</li>
+                                                    <li>Antigüedad mínima: 1 año</li>
+                                                    <li>Una vez por asociado</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="subsidy-card">
+                                                <i class="fas fa-graduation-cap"></i>
+                                                <h5>Subsidio Educativo</h5>
+                                                <p>Ayuda de <strong>$30.000</strong> anuales para gastos escolares.</p>
+                                                <ul>
+                                                    <li>Para hijos de asociados</li>
+                                                    <li>Certificado de alumno regular</li>
+                                                    <li>Hasta 3 hijos por asociado</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="subsidy-card">
+                                                <i class="fas fa-cross"></i>
+                                                <h5>Subsidio por Fallecimiento</h5>
+                                                <p>Cobertura de <strong>$150.000</strong> para gastos de sepelio.</p>
+                                                <ul>
+                                                    <li>Cobertura para titular y grupo familiar</li>
+                                                    <li>Servicio integral incluido</li>
+                                                    <li>Atención 24/7</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="service-note">
+                                            <i class="fas fa-info-circle"></i>
+                                            <p><strong>Importante:</strong> Todos los subsidios están sujetos a la aprobación del Consejo Directivo y requieren estar al día con las cuotas sociales.</p>
+                                        </div>
+                                        
+                                        <div class="service-cta">
+                                            <a href="contacto.html" class="btn btn-primary">Solicitar Subsidio</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Servicio 3: Seguros -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="accordion-header" id="seguros">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseThree">
+                                <div class="accordion-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="accordion-title">
+                                    <span>Seguros</span>
+                                    <small>Protección integral para tu tranquilidad</small>
+                                </div>
+                                <i class="fas fa-chevron-down accordion-arrow"></i>
+                            </button>
+                        </h3>
+                        <div id="collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="service-content">
+                                    <div class="service-description">
+                                        <h4>Cobertura completa para proteger lo que más querés</h4>
+                                        <p>Trabajamos con las mejores compañías aseguradoras para ofrecerte planes accesibles y coberturas completas.</p>
+                                        
+                                        <div class="insurance-options">
+                                            <div class="insurance-card">
+                                                <div class="insurance-header">
+                                                    <i class="fas fa-user-shield"></i>
+                                                    <h5>Seguro de Vida</h5>
+                                                </div>
+                                                <div class="insurance-body">
+                                                    <p>Protegé el futuro de tu familia</p>
+                                                    <ul>
+                                                        <li>Cobertura desde $500.000 hasta $5.000.000</li>
+                                                        <li>Invalidez total o parcial incluida</li>
+                                                        <li>Sin exámenes médicos hasta 55 años</li>
+                                                        <li>Descuentos por grupo familiar</li>
+                                                    </ul>
+                                                    <span class="price">Desde $1.200/mes</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="insurance-card">
+                                                <div class="insurance-header">
+                                                    <i class="fas fa-home"></i>
+                                                    <h5>Seguro de Hogar</h5>
+                                                </div>
+                                                <div class="insurance-body">
+                                                    <p>Tu casa siempre protegida</p>
+                                                    <ul>
+                                                        <li>Incendio, robo y daños por agua</li>
+                                                        <li>Responsabilidad civil</li>
+                                                        <li>Electrodomésticos incluidos</li>
+                                                        <li>Asistencia domiciliaria 24/7</li>
+                                                    </ul>
+                                                    <span class="price">Desde $2.500/mes</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="insurance-card">
+                                                <div class="insurance-header">
+                                                    <i class="fas fa-car"></i>
+                                                    <h5>Seguro Automotor</h5>
+                                                </div>
+                                                <div class="insurance-body">
+                                                    <p>Manejá con total tranquilidad</p>
+                                                    <ul>
+                                                        <li>Responsabilidad civil obligatoria</li>
+                                                        <li>Cobertura contra terceros</li>
+                                                        <li>Todo riesgo disponible</li>
+                                                        <li>Grúa y auto sustituto</li>
+                                                    </ul>
+                                                    <span class="price">Desde $3.800/mes</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="insurance-card">
+                                                <div class="insurance-header">
+                                                    <i class="fas fa-briefcase-medical"></i>
+                                                    <h5>Seguro de Salud</h5>
+                                                </div>
+                                                <div class="insurance-body">
+                                                    <p>Cobertura médica integral</p>
+                                                    <ul>
+                                                        <li>Internación y cirugías</li>
+                                                        <li>Consultas y estudios</li>
+                                                        <li>Medicamentos con descuento</li>
+                                                        <li>Odontología incluida</li>
+                                                    </ul>
+                                                    <span class="price">Desde $4.500/mes</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="service-requirements">
+                                            <h5>Documentación general requerida:</h5>
+                                            <ul>
+                                                <li>DNI del titular y grupo familiar</li>
+                                                <li>Formulario de adhesión completo</li>
+                                                <li>Declaración jurada de salud (para seguro de vida)</li>
+                                                <li>Documentación del bien a asegurar (auto, casa)</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="service-cta">
+                                            <a href="contacto.html" class="btn btn-primary">Cotizar Seguro</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Servicio 4: Turismo -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="accordion-header" id="turismo">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseFour">
+                                <div class="accordion-icon">
+                                    <i class="fas fa-plane-departure"></i>
+                                </div>
+                                <div class="accordion-title">
+                                    <span>Turismo</span>
+                                    <small>Viajes inolvidables a precios accesibles</small>
+                                </div>
+                                <i class="fas fa-chevron-down accordion-arrow"></i>
+                            </button>
+                        </h3>
+                        <div id="collapseFour" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="service-content">
+                                    <div class="service-description">
+                                        <h4>Descubrí el mundo con beneficios exclusivos</h4>
+                                        <p>Organizamos viajes grupales y ofrecemos paquetes turísticos con importantes descuentos para nuestros asociados.</p>
+                                        
+                                        <div class="tourism-destinations">
+                                            <h5>Destinos destacados 2024:</h5>
+                                            
+                                            <div class="destinations-grid">
+                                                <div class="destination-card">
+                                                    <img src="images/bariloche.jpg" alt="Bariloche" onerror="this.src='images/placeholder.jpg'">
+                                                    <div class="destination-info">
+                                                        <h6>Bariloche</h6>
+                                                        <p>7 días / 6 noches</p>
+                                                        <ul>
+                                                            <li>Hotel 3 estrellas</li>
+                                                            <li>Media pensión</li>
+                                                            <li>Excursiones incluidas</li>
+                                                        </ul>
+                                                        <span class="destination-price">$180.000</span>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="destination-card">
+                                                    <img src="images/cataratas.jpg" alt="Cataratas" onerror="this.src='images/placeholder.jpg'">
+                                                    <div class="destination-info">
+                                                        <h6>Cataratas del Iguazú</h6>
+                                                        <p>5 días / 4 noches</p>
+                                                        <ul>
+                                                            <li>Hotel con desayuno</li>
+                                                            <li>Entrada a parques</li>
+                                                            <li>Traslados</li>
+                                                        </ul>
+                                                        <span class="destination-price">$145.000</span>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="destination-card">
+                                                    <img src="images/mendoza.jpg" alt="Mendoza" onerror="this.src='images/placeholder.jpg'">
+                                                    <div class="destination-info">
+                                                        <h6>Mendoza</h6>
+                                                        <p>4 días / 3 noches</p>
+                                                        <ul>
+                                                            <li>Hotel céntrico</li>
+                                                            <li>Tour de bodegas</li>
+                                                            <li>Alta montaña</li>
+                                                        </ul>
+                                                        <span class="destination-price">$95.000</span>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="destination-card">
+                                                    <img src="images/brasil.jpg" alt="Brasil" onerror="this.src='images/placeholder.jpg'">
+                                                    <div class="destination-info">
+                                                        <h6>Florianópolis</h6>
+                                                        <p>8 días / 7 noches</p>
+                                                        <ul>
+                                                            <li>Hotel frente al mar</li>
+                                                            <li>Desayuno buffet</li>
+                                                            <li>Seguro de viaje</li>
+                                                        </ul>
+                                                        <span class="destination-price">$250.000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="tourism-benefits">
+                                            <h5>Beneficios exclusivos:</h5>
+                                            <div class="benefits-list">
+                                                <div class="benefit-item">
+                                                    <i class="fas fa-percentage"></i>
+                                                    <span>20% de descuento para asociados</span>
+                                                </div>
+                                                <div class="benefit-item">
+                                                    <i class="fas fa-credit-card"></i>
+                                                    <span>Financiación hasta en 12 cuotas</span>
+                                                </div>
+                                                <div class="benefit-item">
+                                                    <i class="fas fa-users"></i>
+                                                    <span>Descuentos adicionales para grupos</span>
+                                                </div>
+                                                <div class="benefit-item">
+                                                    <i class="fas fa-shield-alt"></i>
+                                                    <span>Seguro de viaje incluido</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="service-note">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            <p><strong>Próxima salida grupal:</strong> Viaje a Carlos Paz - 15 de Abril 2024. ¡Últimos lugares disponibles!</p>
+                                        </div>
+                                        
+                                        <div class="service-cta">
+                                            <a href="contacto.html" class="btn btn-primary">Consultar Viajes</a>
+                                            <a href="#" class="btn btn-secondary" onclick="showNotification('Descargando catálogo...', 'info'); return false;">
+                                                <i class="fas fa-download"></i> Descargar Catálogo
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Formulario de contacto rápido -->
+                <div class="quick-contact" data-aos="fade-up">
+                    <h3>¿Necesitás más información?</h3>
+                    <p>Completá el formulario y un asesor se pondrá en contacto a la brevedad</p>
+                    <a href="contacto.html" class="btn btn-primary">Contactanos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+    
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/5492645555555" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Botón de Accesibilidad -->
+    <div class="accessibility-controls">
+        <button id="contrast-toggle" aria-label="Alternar alto contraste">
+            <i class="fas fa-adjust"></i>
+        </button>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/servicios.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
