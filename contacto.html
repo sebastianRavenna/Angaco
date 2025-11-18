@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Mutual Angaco</title>
+    <meta name="description" content="Contactate con Mutual Angaco. Visitanos, llamanos o escribinos. Estamos para ayudarte en todo lo que necesites.">
+    <link rel="icon" href="images/favicon2.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Botón de Accesibilidad -->
+    <button id="accessibility-btn" class="accessibility-btn" aria-label="Activar alto contraste">
+        <i class="fas fa-universal-access"></i>
+    </button>
+
+    <!-- Header cargado dinámicamente -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="contacto-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">Contacto</h1>
+            <p class="fade-in-delay">Estamos para ayudarte. Comunicate con nosotros</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">Inicio</a>
+            <span>/</span>
+            <span>Contacto</span>
+        </nav>
+    </div>
+
+    <!-- Información de Contacto Rápida -->
+    <section class="info-rapida-section">
+        <div class="container">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <a href="tel:+542644123456">(0264) 412-3456</a>
+                    <p>Lun a Vie: 8:00 - 16:00hs</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <a href="https://wa.me/5492644123456" target="_blank">(264) 412-3456</a>
+                    <p>Respondemos rápido</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <a href="mailto:info@mutualangaco.com.ar">info@mutualangaco.com.ar</a>
+                    <p>Te respondemos en 24hs</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Dirección</h3>
+                    <p>Av. Libertador 123</p>
+                    <p>San Juan, Argentina</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario y Mapa -->
+    <section class="contacto-main-section">
+        <div class="container">
+            <div class="contacto-grid">
+                <!-- Formulario -->
+                <div class="formulario-container">
+                    <div class="section-header left">
+                        <span class="section-tag">Escribinos</span>
+                        <h2>Envianos tu Consulta</h2>
+                        <p>Completá el formulario y nos pondremos en contacto a la brevedad</p>
+                    </div>
+
+                    <form id="contactForm" class="contact-form" method="POST" action="php/contacto.php">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">
+                                    <i class="fas fa-user"></i>
+                                    Nombre completo *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="nombre" 
+                                    name="nombre" 
+                                    required 
+                                    placeholder="Ingresá tu nombre"
+                                    aria-required="true"
+                                >
+                                <span class="error-message" id="error-nombre"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono">
+                                    <i class="fas fa-phone"></i>
+                                    Teléfono *
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    id="telefono" 
+                                    name="telefono" 
+                                    required 
+                                    placeholder="Ej: 264 123 4567"
+                                    aria-required="true"
+                                >
+                                <span class="error-message" id="error-telefono"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email *
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required 
+                                placeholder="tu@email.com"
+                                aria-required="true"
+                            >
+                            <span class="error-message" id="error-email"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="servicio">
+                                <i class="fas fa-list"></i>
+                                Servicio de interés
+                            </label>
+                            <select id="servicio" name="servicio">
+                                <option value="">Seleccioná un servicio</option>
+                                <option value="prestamos">Préstamos</option>
+                                <option value="subsidios">Subsidios</option>
+                                <option value="seguros">Seguros</option>
+                                <option value="turismo">Turismo Social</option>
+                                <option value="asociacion">Quiero asociarme</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">
+                                <i class="fas fa-comment-alt"></i>
+                                Mensaje *
+                            </label>
+                            <textarea 
+                                id="mensaje" 
+                                name="mensaje" 
+                                required 
+                                rows="6" 
+                                placeholder="Contanos en qué podemos ayudarte..."
+                                aria-required="true"
+                            ></textarea>
+                            <span class="error-message" id="error-mensaje"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input 
+                                    type="checkbox" 
+                                    id="acepto" 
+                                    name="acepto" 
+                                    required
+                                    aria-required="true"
+                                >
+                                <span class="checkmark"></span>
+                                Acepto la <a href="#" target="_blank">política de privacidad</a> *
+                            </label>
+                            <span class="error-message" id="error-acepto"></span>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <span class="btn-text">Enviar Mensaje</span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Enviando...
+                            </span>
+                        </button>
+
+                        <div id="form-message" class="form-message" style="display: none;"></div>
+                    </form>
+                </div>
+
+                <!-- Información Adicional y Mapa -->
+                <div class="info-adicional-container">
+                    <!-- Horarios -->
+                    <div class="info-box">
+                        <h3>
+                            <i class="fas fa-clock"></i>
+                            Horarios de Atención
+                        </h3>
+                        <div class="horarios-list">
+                            <div class="horario-item">
+                                <span class="dia">Lunes a Viernes</span>
+                                <span class="hora">8:00 - 16:00hs</span>
+                            </div>
+                            <div class="horario-item">
+                                <span class="dia">Sábados</span>
+                                <span class="hora">Cerrado</span>
+                            </div>
+                            <div class="horario-item">
+                                <span class="dia">Domingos</span>
+                                <span class="hora">Cerrado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redes Sociales -->
+                    <div class="info-box">
+                        <h3>
+                            <i class="fas fa-share-alt"></i>
+                            Seguinos en Redes
+                        </h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link facebook" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-link instagram" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link linkedin" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-link twitter" target="_blank" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mapa -->
+                    <div class="info-box map-box">
+                        <h3>
+                            <i class="fas fa-map"></i>
+                            Nuestra Ubicación
+                        </h3>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.8156995531445!2d-68.5364447!3d-31.4185713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI1JzA2LjkiUyA2OMKwMzInMTEuMiJX!5e0!3m2!1ses!2sar!4v1234567890"
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Ubicación de Mutual Angaco"
+                            ></iframe>
+                        </div>
+                        <a href="https://goo.gl/maps/example" target="_blank" class="btn-mapa">
+                            <i class="fas fa-directions"></i>
+                            Cómo llegar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Rápidas -->
+    <section class="faq-rapidas-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Preguntas Frecuentes</span>
+                <h2>¿Necesitás Ayuda Rápida?</h2>
+                <p>Revisá estas preguntas comunes antes de contactarnos</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>¿Cómo me asocio?</h3>
+                    <p>Podés acercarte a nuestra oficina con DNI y completar el formulario de adhesión.</p>
+                    <a href="servicios.html" class="faq-link">Más información <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>¿Cuánto cuesta la cuota?</h3>
+                    <p>La cuota social mensual es accesible y varía según el tipo de asociación.</p>
+                    <a href="servicios.html" class="faq-link">Ver planes <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>¿Cómo solicito un préstamo?</h3>
+                    <p>Los socios pueden solicitar préstamos presentando la documentación requerida.</p>
+                    <a href="servicios.html" class="faq-link">Ver requisitos <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>¿Cuánto tardan en responder?</h3>
+                    <p>Respondemos consultas en menos de 24 horas hábiles.</p>
+                    <a href="faq.html" class="faq-link">Más preguntas <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón WhatsApp Flotante -->
+    <a href="https://wa.me/5492644123456" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer cargado dinámicamente -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+</html>

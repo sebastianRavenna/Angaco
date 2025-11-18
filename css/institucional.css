@@ -1,0 +1,747 @@
+/* ========================================
+   INSTITUCIONAL.CSS - MUTUAL ANGACO
+   Estilos específicos para la página institucional
+   ======================================== */
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.institucional-hero {
+    position: relative;
+    height: 400px;
+    background: linear-gradient(135deg, #28C4D8 0%, #5DD902 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.institucional-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/imagenes/pattern.png') repeat;
+    opacity: 0.1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 89, 88, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+/* Animaciones de entrada */
+.fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in-delay {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+.breadcrumb {
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #28C4D8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #005958;
+}
+
+.breadcrumb span {
+    margin: 0 0.5rem;
+}
+
+/* ========================================
+   SECTION HEADERS
+   ======================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-tag {
+    display: inline-block;
+    color: #28C4D8;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #005958;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.section-header.white h2,
+.section-header.white .section-tag {
+    color: white;
+}
+
+.section-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #28C4D8, #5DD902);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+/* ========================================
+   HISTORIA SECTION
+   ======================================== */
+.historia-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.historia-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.historia-text .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #005958;
+    margin-bottom: 1.5rem;
+}
+
+.historia-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.historia-image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.historia-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.historia-image:hover img {
+    transform: scale(1.05);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 89, 88, 0.9), transparent);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.image-caption i {
+    font-size: 1.2rem;
+}
+
+/* ========================================
+   TIMELINE
+   ======================================== */
+.timeline-section {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #28C4D8, #5DD902);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 4px solid #28C4D8;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-item.left::before {
+    right: -10px;
+}
+
+.timeline-item.right::before {
+    left: -10px;
+}
+
+.timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-year {
+    display: inline-block;
+    background: linear-gradient(135deg, #28C4D8, #5DD902);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.timeline-content h3 {
+    color: #005958;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ========================================
+   MISIÓN, VISIÓN Y VALORES
+   ======================================== */
+.mvv-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.mvv-card {
+    background: #f8f9fa;
+    padding: 3rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.mvv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(40, 196, 216, 0.2);
+    border-color: #28C4D8;
+}
+
+.mvv-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.mvv-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #28C4D8, #5DD902);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.mvv-card h3 {
+    font-size: 1.8rem;
+    color: #005958;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.mvv-card p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.valor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.valor-item:hover {
+    transform: translateY(-5px);
+}
+
+.valor-item i {
+    font-size: 2rem;
+    color: #28C4D8;
+}
+
+.valor-item span {
+    font-weight: 600;
+    color: #005958;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   EQUIPO SECTION
+   ======================================== */
+.equipo-section {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.equipo-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.equipo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.equipo-image {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background: #e0e0e0;
+}
+
+.equipo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.equipo-card:hover .equipo-image img {
+    transform: scale(1.1);
+}
+
+.equipo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 89, 88, 0.9), transparent);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.equipo-card:hover .equipo-overlay {
+    opacity: 1;
+}
+
+.equipo-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.equipo-social a {
+    width: 40px;
+    height: 40px;
+    background: white;
+    color: #005958;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.equipo-social a:hover {
+    background: #28C4D8;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.equipo-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.equipo-info h3 {
+    font-size: 1.3rem;
+    color: #005958;
+    margin-bottom: 0.5rem;
+}
+
+.equipo-cargo {
+    display: block;
+    color: #28C4D8;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.equipo-info p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ========================================
+   NÚMEROS SECTION
+   ======================================== */
+.numeros-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #005958 0%, #28C4D8 100%);
+    color: white;
+}
+
+.numeros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+}
+
+.numero-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.numero-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.numero {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.numero-card p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+.cta-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    color: #005958;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .historia-content {
+        gap: 3rem;
+    }
+
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .institucional-hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .historia-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 1rem;
+        text-align: left;
+        left: 0 !important;
+    }
+
+    .timeline-item::before {
+        left: 21px !important;
+        right: auto !important;
+    }
+
+    .mvv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .equipo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .numeros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .institucional-hero {
+        height: 250px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .mvv-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .mvv-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .timeline-item {
+        padding-left: 60px;
+    }
+
+    .timeline-content {
+        padding: 1.5rem;
+    }
+
+    .timeline-year {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .numeros-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .numero {
+        font-size: 2.5rem;
+    }
+
+    .numero-card i {
+        font-size: 2rem;
+    }
+}
+
+/* ========================================
+   MODO ALTO CONTRASTE
+   ======================================== */
+.high-contrast .institucional-hero {
+    background: black;
+}
+
+.high-contrast .section-header h2,
+.high-contrast .historia-text .lead,
+.high-contrast .mvv-card h3,
+.high-contrast .equipo-info h3,
+.high-contrast .timeline-content h3,
+.high-contrast .cta-content h2 {
+    color: white;
+}
+
+.high-contrast .historia-text p,
+.high-contrast .mvv-card p,
+.high-contrast .equipo-info p,
+.high-contrast .timeline-content p,
+.high-contrast .cta-content p {
+    color: yellow;
+}
+
+.high-contrast .mvv-card,
+.high-contrast .equipo-card,
+.high-contrast .timeline-content,
+.high-contrast .valor-item {
+    background: black;
+    border: 2px solid yellow;
+}
+
+.high-contrast .section-tag,
+.high-contrast .equipo-cargo {
+    color: yellow;
+}

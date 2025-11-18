@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Noticias - Mutual Angaco</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f6fa;
+            color: #333;
+        }
+
+        /* HEADER */
+        .admin-header {
+            background: linear-gradient(135deg, #005958, #28C4D8);
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .admin-header h1 {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .admin-header p {
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* BOTONES SUPERIORES */
+        .top-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #28C4D8, #5DD902);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 196, 216, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #005958;
+            border: 2px solid #28C4D8;
+        }
+
+        .btn-secondary:hover {
+            background: #28C4D8;
+            color: white;
+        }
+
+        /* GRID DE NOTICIAS */
+        .noticias-admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 2rem;
+        }
+
+        .noticia-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .noticia-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .noticia-imagen {
+            width: 100%;
+            height: 200px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .noticia-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .noticia-imagen.sin-imagen {
+            color: #999;
+            font-size: 3rem;
+        }
+
+        .badge-destacada {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #FFD700;
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .noticia-content {
+            padding: 1.5rem;
+        }
+
+        .noticia-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .noticia-numero {
+            background: #28C4D8;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .noticia-categoria {
+            background: #e0f7fa;
+            color: #005958;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .noticia-titulo {
+            font-size: 1.3rem;
+            color: #005958;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .noticia-resumen {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .noticia-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .noticia-meta i {
+            color: #28C4D8;
+        }
+
+        .noticia-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .btn-editar {
+            background: #28C4D8;
+            color: white;
+        }
+
+        .btn-editar:hover {
+            background: #005958;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #005958, #28C4D8);
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .close-modal {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        /* FORMULARIO */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #005958;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group label i {
+            color: #28C4D8;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #28C4D8;
+            box-shadow: 0 0 0 3px rgba(40, 196, 216, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group.destacada {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .form-group.destacada label {
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        .form-group input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .imagen-preview {
+            margin-top: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            max-height: 300px;
+        }
+
+        .imagen-preview img {
+            width: 100%;
+            height: auto;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-wrapper input[type=file] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-input-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: #f5f6fa;
+            border: 2px dashed #28C4D8;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .file-input-button:hover {
+            background: rgba(40, 196, 216, 0.1);
+        }
+
+        .char-counter {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 0.3rem;
+        }
+
+        .modal-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        /* ALERTAS */
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert i {
+            font-size: 1.5rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .noticias-admin-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .top-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .modal-content {
+                margin: 1rem;
+            }
+
+            .modal-body {
+                padding: 1rem;
+            }
+        }
+
+        /* LOADING */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .loading i {
+            font-size: 3rem;
+            color: #28C4D8;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="admin-header">
+        <h1>
+            <i class="fas fa-newspaper"></i>
+            Administrador de Noticias
+        </h1>
+        <p>Gestiona las 4 noticias que se muestran en la página principal</p>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container">
+        <!-- Acciones superiores -->
+        <div class="top-actions">
+            <div>
+                <h2>Noticias Actuales (4)</h2>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <a href="../noticias.html" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-eye"></i>
+                    Ver Sitio Público
+                </a>
+            </div>
+        </div>
+
+        <!-- Alertas -->
+        <div id="alertContainer"></div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Cargando noticias...</p>
+        </div>
+
+        <!-- Grid de Noticias -->
+        <div class="noticias-admin-grid" id="noticiasGrid" style="display: none;">
+            <!-- Se cargan dinámicamente -->
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR NOTICIA -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <i class="fas fa-edit"></i>
+                    <span id="modalTitle">Editar Noticia</span>
+                </h2>
+                <button class="close-modal" onclick="cerrarModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form id="editForm" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" id="noticiaId">
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-heading"></i>
+                            Título *
+                        </label>
+                        <input type="text" id="titulo" required maxlength="255">
+                        <div class="char-counter">
+                            <span id="tituloCount">0</span>/255
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-align-left"></i>
+                            Resumen * (Se muestra en la card)
+                        </label>
+                        <textarea id="resumen" required maxlength="250" rows="3"></textarea>
+                        <div class="char-counter">
+                            <span id="resumenCount">0</span>/250
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-file-alt"></i>
+                            Contenido Completo *
+                        </label>
+                        <textarea id="contenido" required rows="8"></textarea>
+                        <div class="char-counter">
+                            <span id="contenidoCount">0</span> caracteres
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-tag"></i>
+                            Categoría *
+                        </label>
+                        <select id="categoria" required>
+                            <option value="institucional">Institucional</option>
+                            <option value="servicios">Servicios</option>
+                            <option value="eventos">Eventos</option>
+                            <option value="beneficios">Beneficios</option>
+                            <option value="comunidad">Comunidad</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-image"></i>
+                            Imagen
+                        </label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="imagen" accept="image/*" onchange="previsualizarImagen(event)">
+                            <label for="imagen" class="file-input-button">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                Seleccionar Imagen
+                            </label>
+                        </div>
+                        <div class="imagen-preview" id="imagenPreview"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-calendar"></i>
+                            Fecha de Publicación *
+                        </label>
+                        <input type="date" id="fecha" required>
+                    </div>
+
+                    <div class="form-group destacada">
+                        <input type="checkbox" id="destacada">
+                        <label for="destacada">
+                            <i class="fas fa-star"></i>
+                            Marcar como Destacada (aparece primero)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="cerrarModal()">
+                        <i class="fas fa-times"></i>
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        Guardar Cambios
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin-noticias.js"></script>
+</body>
+</html>

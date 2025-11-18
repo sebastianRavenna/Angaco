@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - Mutual Angaco</title>
+    <meta name="description" content="Mantente informado con las últimas noticias, eventos y novedades de Mutual Angaco.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/noticias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Botón de Accesibilidad -->
+    <button id="accessibility-btn" class="accessibility-btn" aria-label="Activar alto contraste">
+        <i class="fas fa-universal-access"></i>
+    </button>
+
+    <!-- Header cargado dinámicamente -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="noticias-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">Noticias</h1>
+            <p class="fade-in-delay">Mantenete informado sobre nuestras novedades</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">Inicio</a>
+            <span>/</span>
+            <span>Noticias</span>
+        </nav>
+    </div>
+
+    <!-- Filtros y Búsqueda -->
+    <section class="filtros-section">
+        <div class="container">
+            <div class="filtros-container">
+                <div class="filtro-busqueda">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar noticias...">
+                </div>
+
+                <div class="filtro-categoria">
+                    <select id="categoriaFilter">
+                        <option value="">Todas las categorías</option>
+                        <option value="institucional">Institucional</option>
+                        <option value="servicios">Servicios</option>
+                        <option value="eventos">Eventos</option>
+                        <option value="beneficios">Beneficios</option>
+                        <option value="comunidad">Comunidad</option>
+                    </select>
+                </div>
+
+                <div class="filtro-orden">
+                    <select id="ordenFilter">
+                        <option value="recientes">Más recientes</option>
+                        <option value="antiguas">Más antiguas</option>
+                        <option value="destacadas">Destacadas</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Noticia Destacada -->
+    <section class="noticia-destacada-section" id="noticiaDestacada">
+        <!-- Se carga dinámicamente desde JavaScript -->
+    </section>
+
+    <!-- Grid de Noticias -->
+    <section class="noticias-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Todas las Noticias</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <!-- Loading spinner -->
+            <div id="loadingSpinner" class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Cargando noticias...</p>
+            </div>
+
+            <!-- Grid de noticias -->
+            <div class="noticias-grid" id="noticiasGrid">
+                <!-- Las noticias se cargan dinámicamente desde JavaScript -->
+            </div>
+
+            <!-- Mensaje si no hay noticias -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-inbox"></i>
+                <h3>No se encontraron noticias</h3>
+                <p>Intentá con otros filtros o términos de búsqueda</p>
+            </div>
+
+            <!-- Paginación -->
+            <div class="pagination" id="pagination">
+                <!-- Se carga dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="newsletter-text">
+                    <h3>Recibí nuestras noticias por email</h3>
+                    <p>Suscribite a nuestro boletín y mantente informado</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Suscribirse
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer cargado dinámicamente -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/noticias.js"></script>
+</body>
+</html>

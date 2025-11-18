@@ -316,3 +316,240 @@ window.serviceUtils = {
     checkRequiredDocuments,
     highlightService
 };
+
+/* ========================================
+   FAQ JAVASCRIPT - AGREGAR A SERVICIOS.JS
+   Manejo de acordeones para preguntas frecuentes
+   ======================================== */
+
+// ========================================
+// FUNCIONALIDAD FAQ
+// ========================================
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    if (faqQuestions.length === 0) return;
+    
+    // Función para cerrar todos los FAQ
+    function closeAllFAQ() {
+        faqItems.forEach(item => {
+            item.classList.remove('active');
+            const answer = item.querySelector('.faq-answer');
+            if (answer) {
+                answer.style.maxHeight = '0';
+            }
+        });
+    }
+    
+    // Función para abrir un FAQ específico
+    function openFAQ(item) {
+        const answer = item.querySelector('.faq-answer');
+        if (answer) {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    }
+    
+    // Función para toggle de FAQ
+    function toggleFAQ(item) {
+        const isActive = item.classList.contains('active');
+        
+        // Cerrar todos los demás
+        closeAllFAQ();
+        
+        // Si no estaba activo, abrirlo
+        if (!isActive) {
+            openFAQ(item);
+        }
+    }
+    
+    // Agregar event listeners a cada pregunta
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function(e) {
+            e.preventDefault();
+            const faqItem = this.closest('.faq-item');
+            toggleFAQ(faqItem);
+        });
+    });
+    
+    // Navegación por teclado (accesibilidad)
+    faqQuestions.forEach((question, index) => {
+        question.addEventListener('keydown', function(e) {
+            const currentItem = this.closest('.faq-item');
+            
+            switch(e.key) {
+                case 'Enter':
+                case ' ':
+                    e.preventDefault();
+                    toggleFAQ(currentItem);
+                    break;
+                    
+                case 'ArrowDown':
+                    e.preventDefault();
+                    if (index < faqQuestions.length - 1) {
+                        faqQuestions[index + 1].focus();
+                    }
+                    break;
+                    
+                case 'ArrowUp':
+                    e.preventDefault();
+                    if (index > 0) {
+                        faqQuestions[index - 1].focus();
+                    }
+                    break;
+                    
+                case 'Home':
+                    e.preventDefault();
+                    faqQuestions[0].focus();
+                    break;
+                    
+                case 'End':
+                    e.preventDefault();
+                    faqQuestions[faqQuestions.length - 1].focus();
+                    break;
+            }
+        });
+    });
+    
+    // Abrir FAQ desde URL hash (ej: servicios.html#faq-prestamos)
+    function openFAQFromHash() {
+        const hash = window.location.hash;
+        if (hash && hash.includes('faq-')) {
+            // Buscar el item correspondiente
+            const targetId = hash.replace('#', '');
+            const targetItem = document.querySelector(`[data-faq-id="${targetId}"]`);
+            
+            if (targetItem) {
+                const faqItem = targetItem.closest('.faq-item');
+                openFAQ(faqItem);
+                
+                // Scroll suave al elemento
+                setTimeout(() => {
+                    faqItem.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }, 100);
+            }
+        }
+    }
+    
+    // Ejecutar al cargar
+    openFAQFromHash();
+    
+    // Escuchar cambios en el hash
+    window.addEventListener('hashchange', openFAQFromHash);
+}
+
+// ========================================
+// BÚSQUEDA EN FAQ
+// ========================================
+function initFAQSearch() {
+    // Esta función se puede expandir si quieres agregar un buscador de FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    window.searchFAQ = function(query) {
+        if (!query) {
+            faqItems.forEach(item => item.style.display = '');
+            return;
+        }
+        
+        const searchTerm = query.toLowerCase();
+        let found = false;
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+            const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+            
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                item.style.display = '';
+                found = true;
+                
+                // Highlight del término buscado (opcional)
+                if (searchTerm.length > 2) {
+                    const regex = new RegExp(`(${searchTerm})`, 'gi');
+                    const questionEl = item.querySelector('.faq-question span');
+                    questionEl.innerHTML = questionEl.textContent.replace(regex, '<mark>$1</mark>');
+                }
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        return found;
+    };
+}
+
+// ========================================
+// ANIMACIÓN DE ENTRADA CON INTERSECTION OBSERVER
+// ========================================
+function animateFAQOnScroll() {
+    const faqSection = document.querySelector('.faq-section');
+    
+    if (!faqSection) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    observer.observe(faqSection);
+}
+
+// ========================================
+// TRACKING DE FAQ (Analytics)
+// ========================================
+function trackFAQInteraction() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const questionText = this.querySelector('span').textContent;
+            const category = this.closest('.faq-category')
+                                 .querySelector('.faq-category-title')
+                                 .textContent
+                                 .trim();
+            
+            console.log('FAQ clicked:', {
+                category: category,
+                question: questionText
+            });
+            
+            // Aquí puedes agregar Google Analytics tracking
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', 'faq_interaction', {
+            //         'event_category': 'FAQ',
+            //         'event_label': category + ' - ' + questionText
+            //     });
+            // }
+        });
+    });
+}
+
+// ========================================
+// INICIALIZACIÓN
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('🔍 Inicializando FAQ');
+    
+    // Inicializar funcionalidades FAQ
+    initFAQ();
+    initFAQSearch();
+    animateFAQOnScroll();
+    trackFAQInteraction();
+    
+    console.log('✅ FAQ inicializado correctamente');
+});
+
+// ========================================
+// EXPORTAR FUNCIONES
+// ========================================
+window.faqUtils = {
+    initFAQ,
+    searchFAQ: window.searchFAQ || null
+};

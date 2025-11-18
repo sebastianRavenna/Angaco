@@ -1,0 +1,56 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "titulo": "Nueva Sede en el Centro de Angaco",
+      "slug": "nueva-sede-centro-angaco",
+      "resumen": "Inauguramos nuestras nuevas oficinas en el centro de Angaco para estar más cerca de nuestros asociados.",
+      "contenido": "Con gran alegría anunciamos la apertura de nuestra nueva sede en el centro de Angaco. Este nuevo espacio cuenta con instalaciones modernas y accesibles, diseñadas para brindar una mejor atención a todos nuestros asociados.\n\nLa nueva oficina está ubicada en Av. Libertador 1234, en pleno centro de la ciudad, con fácil acceso y estacionamiento disponible. Contamos con espacios renovados para atención al público, sala de reuniones y oficinas administrativas.\n\nLos horarios de atención son de lunes a viernes de 8:00 a 16:00 hs y sábados de 9:00 a 13:00 hs. Te esperamos para conocer nuestras nuevas instalaciones.",
+      "imagen": "assets/imagenes/noticias/noticia-1.jpg",
+      "categoria": "institucional",
+      "destacada": true,
+      "fecha": "2024-11-15",
+      "autor": "Mutual Angaco"
+    },
+    {
+      "id": 2,
+      "titulo": "Nuevas Tasas Preferenciales en Préstamos",
+      "slug": "nuevas-tasas-preferenciales-prestamos",
+      "resumen": "Lanzamos tasas especiales para préstamos personales con condiciones más accesibles para todos los asociados.",
+      "contenido": "Estamos felices de anunciar que a partir de este mes contamos con nuevas tasas preferenciales para préstamos personales. Estas tasas especiales están diseñadas para ayudar a nuestros asociados a cumplir sus proyectos y necesidades.\n\nLas nuevas tasas son:\n- Préstamos hasta $200.000: 45% TNA\n- Préstamos de $200.000 a $500.000: 42% TNA\n- Préstamos superiores a $500.000: 39% TNA\n\nAdemás, ofrecemos plazos flexibles de hasta 36 meses y mínimos requisitos. Acercate a nuestras oficinas para más información o contactanos por WhatsApp.",
+      "imagen": "assets/imagenes/noticias/noticia-2.jpg",
+      "categoria": "servicios",
+      "destacada": false,
+      "fecha": "2024-11-10",
+      "autor": "Mutual Angaco"
+    },
+    {
+      "id": 3,
+      "titulo": "Viaje de Fin de Año a Bariloche",
+      "slug": "viaje-fin-ano-bariloche",
+      "resumen": "¡Últimos cupos disponibles! Unite a nuestro viaje de fin de año a Bariloche con tarifa especial para asociados.",
+      "contenido": "Ya están abiertas las inscripciones para nuestro tradicional viaje de fin de año a San Carlos de Bariloche. Esta vez visitaremos la hermosa ciudad patagónica durante 7 días y 6 noches.\n\nEl paquete incluye:\n- Transporte ida y vuelta en bus semicama\n- Alojamiento en hotel céntrico con desayuno\n- Excursiones a Circuito Chico y Cerro Catedral\n- Guía turístico durante todo el viaje\n- Seguro de viaje\n\nTarifa especial para asociados: $450.000 por persona. Cupos limitados. Inscripciones abiertas hasta el 30 de noviembre. ¡No te lo pierdas!",
+      "imagen": "assets/imagenes/noticias/noticia-3.jpg",
+      "categoria": "turismo",
+      "destacada": false,
+      "fecha": "2024-11-08",
+      "autor": "Mutual Angaco"
+    },
+    {
+      "id": 4,
+      "titulo": "Jornada de Salud Gratuita para Asociados",
+      "slug": "jornada-salud-gratuita",
+      "resumen": "Próximo sábado realizaremos una jornada de salud con controles médicos gratuitos para todos los asociados y su familia.",
+      "contenido": "El próximo sábado 25 de noviembre realizaremos nuestra jornada anual de salud, completamente gratuita para todos nuestros asociados y sus familias.\n\nServicios disponibles:\n- Control de presión arterial\n- Medición de glucemia\n- Control de peso y talla\n- Asesoramiento nutricional\n- Charlas sobre prevención de enfermedades\n- Entrega de material informativo\n\nLa jornada se realizará en nuestras instalaciones de Av. Libertador 1234, de 9:00 a 14:00 hs. No necesitás inscripción previa, solo acercate con tu carnet de asociado. ¡Te esperamos!",
+      "imagen": "assets/imagenes/noticias/noticia-4.jpg",
+      "categoria": "eventos",
+      "destacada": false,
+      "fecha": "2024-11-05",
+      "autor": "Mutual Angaco"
+    }
+  ],
+  "configuracion": {
+    "ultima_actualizacion": "2024-11-15T10:30:00",
+    "version": "1.0"
+  }
+}
