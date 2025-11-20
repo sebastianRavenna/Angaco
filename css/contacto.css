@@ -1,6 +1,7 @@
 /* ========================================
    CONTACTO.CSS - MUTUAL ANGACO
    Estilos específicos para la página de contacto
+   VERSIÓN CORREGIDA Y COMPLETA
    ======================================== */
 
 /* ========================================
@@ -103,6 +104,10 @@
     transition: transform 0.3s ease;
 }
 
+.info-icon.whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
 .info-card:hover .info-icon {
     transform: scale(1.1) rotate(5deg);
 }
@@ -153,6 +158,10 @@
     padding: 3rem;
     border-radius: 15px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.section-header.left {
+    text-align: left;
 }
 
 .contact-form {
@@ -371,7 +380,7 @@
 }
 
 /* ========================================
-   INFO ADICIONAL
+   INFO ADICIONAL - ESTILOS BASE
    ======================================== */
 .info-adicional {
     display: flex;
@@ -379,19 +388,15 @@
     gap: 2rem;
 }
 
-.mapa-container,
-.whatsapp-box,
-.redes-sociales,
-.faq-link {
+/* Estilos base para todas las cajas de información */
+.info-box {
     background: white;
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 }
 
-.mapa-container h3,
-.whatsapp-box h3,
-.redes-sociales h3 {
+.info-box h3 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -400,18 +405,133 @@
     margin-bottom: 1.5rem;
 }
 
-.mapa-container h3 i {
+.info-box h3 i {
     color: #28C4D8;
     font-size: 1.3rem;
 }
 
-.mapa-wrapper {
+/* ========================================
+   HORARIOS DE ATENCIÓN
+   ======================================== */
+.horario-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.horario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.horario-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.horario-item .dia {
+    font-weight: 600;
+    color: #005958;
+}
+
+.horario-item .hora {
+    color: #666;
+    font-weight: 500;
+}
+
+/* ========================================
+   REDES SOCIALES
+   ======================================== */
+
+
+.redes-sociales h3 i {
+    color: #28C4D8;
+}
+
+.redes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid;
+}
+
+.social-link i {
+    font-size: 1.5rem;
+}
+
+.social-link.facebook {
+    color: #1877f2;
+    border-color: #1877f2;
+    background: rgba(24, 119, 242, 0.05);
+}
+
+.social-link.facebook:hover {
+    background: #1877f2;
+    color: white;
+}
+
+.social-link.instagram {
+    color: #e4405f;
+    border-color: #e4405f;
+    background: rgba(228, 64, 95, 0.05);
+}
+
+.social-link.instagram:hover {
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+}
+
+.social-link.twitter {
+    color: #1DA1F2;
+    border-color: #1DA1F2;
+    background: rgba(29, 161, 242, 0.05);
+}
+
+.social-link.twitter:hover {
+    background: #1DA1F2;
+    color: white;
+}
+
+.social-link.linkedin {
+    color: #0077b5;
+    border-color: #0077b5;
+    background: rgba(0, 119, 181, 0.05);
+}
+
+.social-link.linkedin:hover {
+    background: #0077b5;
+    color: white;
+}
+
+/* ========================================
+   MAPA
+   ======================================== */
+
+
+.map-container {
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 1rem;
 }
 
-.mapa-wrapper iframe {
+.map-container iframe {
     width: 100%;
     height: 300px;
     border: 0;
@@ -438,185 +558,56 @@
 }
 
 /* ========================================
-   WHATSAPP BOX
+   CONTENEDOR DE MAPA (versión anterior - mantenida por compatibilidad)
    ======================================== */
-.whatsapp-box {
-    text-align: center;
+.mapa-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 }
 
-.whatsapp-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    border-radius: 50%;
+.mapa-container h3 {
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 2.5rem;
-}
-
-.whatsapp-box h3 {
-    justify-content: center;
-    color: #25D366;
-}
-
-.whatsapp-box p {
-    color: #666;
+    gap: 0.5rem;
+    color: #005958;
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
 
-.btn-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-whatsapp:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
-}
-
-.btn-whatsapp i {
-    font-size: 1.5rem;
-}
-
-/* ========================================
-   REDES SOCIALES
-   ======================================== */
-.redes-sociales h3 i {
+.mapa-container h3 i {
     color: #28C4D8;
+    font-size: 1.3rem;
 }
 
-.redes-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-.red-social {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid;
-}
-
-.red-social i {
-    font-size: 1.5rem;
-}
-
-.red-social.facebook {
-    color: #1877f2;
-    border-color: #1877f2;
-    background: rgba(24, 119, 242, 0.05);
-}
-
-.red-social.facebook:hover {
-    background: #1877f2;
-    color: white;
-}
-
-.red-social.instagram {
-    color: #e4405f;
-    border-color: #e4405f;
-    background: rgba(228, 64, 95, 0.05);
-}
-
-.red-social.instagram:hover {
-    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    color: white;
-}
-
-.red-social.twitter {
-    color: #1DA1F2;
-    border-color: #1DA1F2;
-    background: rgba(29, 161, 242, 0.05);
-}
-
-.red-social.twitter:hover {
-    background: #1DA1F2;
-    color: white;
-}
-
-.red-social.linkedin {
-    color: #0077b5;
-    border-color: #0077b5;
-    background: rgba(0, 119, 181, 0.05);
-}
-
-.red-social.linkedin:hover {
-    background: #0077b5;
-    color: white;
-}
-
-/* ========================================
-   FAQ LINK
-   ======================================== */
-.faq-link {
-    text-align: center;
-    background: linear-gradient(135deg, rgba(40, 196, 216, 0.1), rgba(93, 217, 2, 0.1));
-}
-
-.faq-link i {
-    font-size: 3rem;
-    color: #28C4D8;
+.mapa-wrapper {
+    border-radius: 10px;
+    overflow: hidden;
     margin-bottom: 1rem;
 }
 
-.faq-link h4 {
-    color: #005958;
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-
-.faq-link p {
-    color: #666;
-    margin-bottom: 1.5rem;
-}
-
-.btn-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #28C4D8;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-link:hover {
-    gap: 1rem;
-    color: #005958;
+.mapa-wrapper iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
 }
 
 /* ========================================
-   OTROS MEDIOS
+   FAQ RÁPIDAS
    ======================================== */
-.otros-medios {
+.faq-rapidas-section {
     padding: 5rem 0;
     background: white;
 }
 
-.medios-grid {
+.faq-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-.medio-card {
+.faq-card {
     background: #f8f9fa;
     padding: 2.5rem 2rem;
     border-radius: 15px;
@@ -625,14 +616,14 @@
     border: 2px solid transparent;
 }
 
-.medio-card:hover {
+.faq-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-color: #28C4D8;
     background: white;
 }
 
-.medio-icon {
+.faq-icon {
     width: 70px;
     height: 70px;
     margin: 0 auto 1.5rem;
@@ -647,31 +638,70 @@
     transition: all 0.3s ease;
 }
 
-.medio-card:hover .medio-icon {
+.faq-card:hover .faq-icon {
     background: linear-gradient(135deg, #28C4D8, #5DD902);
     color: white;
     border-color: transparent;
     transform: scale(1.1);
 }
 
-.medio-card h3 {
+.faq-card h3 {
     color: #005958;
     font-size: 1.3rem;
     margin-bottom: 1rem;
 }
 
-.medio-card p {
+.faq-card p {
     color: #666;
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
 
-.medio-info {
-    display: block;
+.faq-card .faq-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     color: #28C4D8;
+    text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.faq-card .faq-link:hover {
+    gap: 1rem;
+    color: #005958;
+}
+
+/* ========================================
+   BOTÓN DE ACCESIBILIDAD
+   ======================================== */
+.accessibility-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #28C4D8, #5DD902);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(40, 196, 216, 0.4);
+}
+
+.accessibility-btn i {
+    font-size: 1.25rem;
 }
 
 /* ========================================
@@ -725,7 +755,7 @@
         grid-template-columns: 1fr;
     }
 
-    .medios-grid {
+    .faq-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -763,8 +793,20 @@
         font-size: 0.95rem;
     }
 
-    .mapa-wrapper iframe {
+    .mapa-wrapper iframe,
+    .map-container iframe {
         height: 250px;
+    }
+
+    .accessibility-btn {
+        bottom: 80px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .accessibility-btn i {
+        font-size: 1.1rem;
     }
 }
 
@@ -777,25 +819,23 @@
 
 .high-contrast .info-card,
 .high-contrast .form-container,
+.high-contrast .info-box,
 .high-contrast .mapa-container,
-.high-contrast .whatsapp-box,
 .high-contrast .redes-sociales,
-.high-contrast .faq-link,
-.high-contrast .medio-card {
+.high-contrast .faq-card {
     background: black;
     border: 2px solid yellow;
 }
 
 .high-contrast .info-card h3,
 .high-contrast .form-group label,
-.high-contrast .medio-card h3,
-.high-contrast .faq-link h4 {
+.high-contrast .info-box h3,
+.high-contrast .faq-card h3 {
     color: white;
 }
 
 .high-contrast .info-card p,
-.high-contrast .medio-card p,
-.high-contrast .faq-link p {
+.high-contrast .faq-card p {
     color: yellow;
 }
 
@@ -807,13 +847,36 @@
     border-color: yellow;
 }
 
-.high-contrast .btn-primary {
+.high-contrast .btn-primary,
+.high-contrast .btn-mapa,
+.high-contrast .accessibility-btn {
     background: yellow;
     color: black;
 }
 
 .high-contrast .info-icon,
-.high-contrast .medio-icon {
+.high-contrast .faq-icon {
     background: yellow;
     color: black;
+}
+
+.high-contrast .social-link {
+    background: black;
+    border-color: yellow;
+    color: yellow;
+}
+
+.high-contrast .social-link:hover {
+    background: yellow;
+    color: black;
+}
+
+.high-contrast .horario-item {
+    background: #1a1a1a;
+    border: 1px solid yellow;
+}
+
+.high-contrast .horario-item .dia,
+.high-contrast .horario-item .hora {
+    color: yellow;
 }
