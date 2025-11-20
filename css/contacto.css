@@ -47,7 +47,8 @@
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 0rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -523,7 +524,6 @@
 /* ========================================
    MAPA
    ======================================== */
-
 
 .map-container {
     border-radius: 10px;
